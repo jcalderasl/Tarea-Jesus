@@ -6,7 +6,7 @@ namespace Ejercicio_extra1
     {
         static void Main(string[] args)
         {
-            //Programa que calcule el programa de un numero.
+            //Programa que calcule el factorial de un numero.
             int n, fact = 1, contador = 0;
             Console.WriteLine("Ingrese un numero...");
             n = Convert.ToInt32(Console.ReadLine());
