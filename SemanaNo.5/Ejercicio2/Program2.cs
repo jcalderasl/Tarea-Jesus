@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 
 namespace Ejercicio2
@@ -8,36 +8,36 @@ namespace Ejercicio2
         //void es cuando no vamos a devolver un valor
         public static void dibuja(int Cantidad)
         {
-            int Lateral = 10;
-            int Horizontal = 20;
-            int FI = 8;
-            int CI = 1;
-            int F, C, A;
+            int Fila = 10;
+            int Columna = 10;
+            int Fila2 = 0;
+            int Columna2 = 0;
+            int A, B, C;
 
-            for (A = 1; A <= Cantidad; A++)
+            for (C = 1; C <= Cantidad; C++)
             {
-                for (F = CI; F <= Horizontal; F++)
+                for (A = Columna2; A <= Columna; A++)
                 {
                     //mueve o posiciona el curso en la fila y columna que le indiquemos
-                    Console.SetCursorPosition(F, Lateral); Console.Write("-");//fila de abajo
-                    Console.SetCursorPosition(F, FI); Console.Write("O");//fila de arriba
+                    Console.SetCursorPosition(A, Fila); Console.Write("-");//fila de abajo
+                    Console.SetCursorPosition(A, Fila2); Console.Write("O");//fila de arriba
                 }
-                for (C = FI; C <= Lateral; C++)
+                for (B = Fila2; B <= Fila; B++)
                 {
-                    Console.SetCursorPosition(CI, C); Console.Write("/");//columna izquierda
-                    Console.SetCursorPosition(Horizontal, C); Console.Write("X");//columna derecha
+                    Console.SetCursorPosition(Columna2, B); Console.Write("/");//columna izquierda
+                    Console.SetCursorPosition(Columna, B); Console.Write("X");//columna derecha
                 }
-                FI = FI + 1;
-                Lateral--;
-                CI++;
-                Horizontal--;
+                Fila2++;
+                Fila--;
+                Columna2++;
+                Columna--;
 
             }
         }
 
         static void Main(string[] args)
         {
-            for (int tam = 1; tam < 3; tam++)
+            for (int tam = 1; tam <= 3; tam++)
             {
                 dibuja(tam);
                 Thread.Sleep(1000);
